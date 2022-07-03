@@ -87,7 +87,7 @@ body  {
     overflow: hidden;
 }
 
-/* Contsiner */
+/* Container */
 .container {
     margin-left: auto;
     margin-right: auto;
@@ -155,6 +155,10 @@ body  {
 .site-nav .link.current {
     color: var(--accent-color);
 } 
+.site-nav .link:hover,
+.site-nav .link:focus {
+    color: var(--accent-color);
+}
 
 /* Adress-nav */
 .adress-nav {
@@ -228,10 +232,11 @@ body  {
     text-transform: uppercase;
 }
 
-.button.order {
+.order-button {
     padding: 10px 32px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-
+    border: 0 solid transparent;
+    border-radius: 4px;
     background-color: var(--accent-color);
     color: var(--white-text-color);
     font-weight: 700;
@@ -240,13 +245,11 @@ body  {
     text-align: center;
     letter-spacing: 0.06em; 
 }
-
-.button.order:hover {
+.order-button:hover,
+.order-button:focus {
     background: #188CE8;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-    border-radius: 4px;
+    cursor: pointer;
 }
-
 
 
 /* Feature */
@@ -257,21 +260,16 @@ body  {
 .feature {
     display: flex;
 }
-.feature-button {
-    display: block;
+.feature-group {
+    display: flex;
     width: 270px;
     height: 120px;
-    padding: 0;
-    margin-left: auto;
-    margin-right: auto;
     margin-bottom: 30px;
+    background-color: var(--secondary-fon-color);
     background-position: center;
-    border: none;
     border-radius: 4px;
-}
-.button-icon {
-    width: 70px;
-    height: 70px;  
+    justify-content: center;
+    align-items: center;
 }
 
 .feature .item {
@@ -390,8 +388,9 @@ body  {
 
 }
 .social-links {
-    display: inline-block;
-    padding: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 44px;
     height: 44px;
     background-color: var(--social-icom-main-color);
@@ -400,11 +399,13 @@ body  {
 .social-icon {
     fill: var(--social-icon-color);
 }
+
 .social-links:hover,
-.social-link:focus {
+.social-links:focus {
     background-color: var(--accent-color);
 }
-.social-links:hover .social-icon {
+.social-links:hover .social-icon,
+.social-links:focus .social-icon {
     fill: var(--social-icom-main-color);
 }
 
@@ -425,29 +426,32 @@ body  {
 .company-client {
     width: 170px;
     height: 92px;
-    border: 1px solid var(--company-icon-color);
-    border-radius: 4px;
     padding: 0;
 }
 .company-client:not(:last-child) {
     margin-right: 30px;
 }
 .company-link {
-    display: inline-block;
-    width: 170px;
-    height: 90px;
-    padding: 16px 32px 16px 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border: 1px solid var(--company-icon-color);
+    border-radius: 4px;
 }
 .company-icons {
     fill: var(--company-icon-color);
 }
-.company-client:hover,
-.company-client:focus {
+.company-link:hover,
+.company-link:focus {
     border-color: var(--accent-color);
+    fill: var(--accent-color);
 }
 
-.company-client:hover .company-icons,
-.company-client:focus .company-icons {
+.company-link:hover .company-icons,
+.company-link:focus .company-icons {
+    border-color: var(--accent-color);
     fill: var(--accent-color);
 }
 
@@ -531,6 +535,7 @@ body  {
 .social-join-links:hover,
 .social-join-links:focus {
     background-color: var(--accent-color);
+
 }
 
 /* Порфолио разметка */
